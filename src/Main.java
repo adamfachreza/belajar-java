@@ -23,7 +23,8 @@ public class Main {
 //        System.out.println(result);
 //
 //
-      int result =  hitungKata("Test");
+        String text = input.nextLine();
+      int result =  hitungKata(text);
         System.out.println(result);
     }
 //    public static void fungsiLogika(){
@@ -201,7 +202,7 @@ public class Main {
     }
 
     static int hitungKata(String input){
-        String[] countString = input.split("");
+        String[] countString = input.split(" ");
         return countString.length;
     }
 
