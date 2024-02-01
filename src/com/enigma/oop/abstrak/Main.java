@@ -5,6 +5,8 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
+
+        // buat ngebandingin valuenya bukan memory
 //        Circle circle = new Circle(2);
 //        System.out.println(circle.equals(new Circle(2)));
 
@@ -14,6 +16,8 @@ public class Main {
 //        Square square = new Square();
 //        square.draw();
 //        square.display();
+
+        // untuk menghilangkan data duplicate menggunakan hashset
         Set<Circle> circleSet = new HashSet<>();
         circleSet.add(new Circle(10));
         circleSet.add(new Circle(30));

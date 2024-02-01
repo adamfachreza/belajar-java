@@ -23,6 +23,7 @@ public class Circle extends Shape{
         return Objects.equals(radius, circle.radius);
     }
 
+    // buat ngilangin data duplicate
     @Override
     public int hashCode() {
         return Objects.hash(radius);
