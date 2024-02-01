@@ -1,0 +1,11 @@
+inheritance menurunkan method atau variabel class parent ke class childnya
+
+inheritance bisa menurunkan ke beberapa class child tapi child hanya bisa menerima 1 class parent
+
+super digunakan untuk merujuk ke metode atau atribut dari kelas induk.
+
+untuk menurunkan method atau variabel parent, class child harus meng extends class parentnya
+
+Kelas anak dapat menambahkan metode atau atribut tambahan atau menimpa metode yang sudah ada.
+
+Konstruktor kelas anak dapat memanggil konstruktor kelas induk menggunakan super().

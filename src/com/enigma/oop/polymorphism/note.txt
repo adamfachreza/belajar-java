@@ -1,0 +1,68 @@
+Polimorfisme Compile-Time (Statis)
+
+Metode Overloading:
+
+Metode overloading terjadi ketika sebuah kelas memiliki beberapa metode dengan nama yang sama, tetapi jumlah atau tipe parameter yang berbeda. Compiler akan memilih metode yang sesuai berdasarkan jumlah dan tipe parameter.
+
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+
+Metode Overriding:
+
+Metode overriding terjadi ketika kelas anak (subclass) menyediakan implementasi ulang dari metode yang sudah ada di kelas induk (superclass). Metode overriding melibatkan nama metode, tipe parameter, dan tipe pengembalian yang sama.
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+
+Polimorfisme Runtime (Dinamis):
+
+Polimorfisme runtime terkait dengan penggunaan konsep inheritance dan pembuatan objek dari kelas yang berbeda dengan menggunakan referensi kelas induk. Hal ini dapat dicapai melalui penggunaan metode overriding.
+
+class Shape {
+    void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+class Square extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a square");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape shape1 = new Circle();
+        Shape shape2 = new Square();
+
+        shape1.draw(); // Output: Drawing a circle
+        shape2.draw(); // Output: Drawing a square
+    }
+}

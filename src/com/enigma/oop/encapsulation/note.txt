@@ -1,0 +1,4 @@
+atribut variabel harus di buat private agar idak dapat diakses langsung dari luar objek
+
+lalu untuk berinteraksi dengan data dalam objek, menggunakan getter setter
+
