@@ -9,46 +9,34 @@ public class Robot {
         this.direction = direction;
     }
 
-    public void move(String command){
-        if(command.equals("A")){
-            if(this.direction==Direction.EAST){
-                position = position.getRight();
-            }if(this.direction==Direction.NORTH){
-                position = position.getTop();
-            }if(this.direction==Direction.SOUTH){
-                position = position.getBottom();
-            }if(this.direction==Direction.WEST){
-                position = position.getLeft();
-            }
-        }
 
-        if(command.equals("R")){
-            switch (direction){
-                case EAST:direction = Direction.SOUTH;
+    public void move(String commandString){
+        EnumCommand command = EnumCommand.valueOf(commandString);
+        switch (command) {
+            case A:
+                forward();
                 break;
-                case NORTH:direction = Direction.EAST;
+            case L:
+                direction = direction.turnLeft();
                 break;
-                case SOUTH:direction = Direction.WEST;
+            case R:
+                direction = direction.turnRight();
                 break;
-                case WEST:direction = Direction.NORTH;
-                break;
-
-            }
-        }
-            if(command.equals("L")){
-            switch (direction){
-                case EAST:direction = Direction.NORTH;
-                break;
-                case NORTH:direction = Direction.WEST;
-                break;
-                case SOUTH:direction = Direction.EAST;
-                break;
-                case WEST:direction = Direction.SOUTH;
-                break;
-
-            }
         }
     }
+
+    private void forward(){
+        if (this.direction == Direction.EAST) {
+            position = position.getRight();
+        }if(this.direction == Direction.NORTH){
+            position = position.getTop();
+        }if(this.direction == Direction.SOUTH){
+            position = position.getBottom();
+        }if(this.direction == Direction.WEST){
+            position = position.getLeft();
+        }
+    }
+
     public void moves(String commands){
         String[] commandsArray = commands.split("");
         for (String command : commandsArray){
@@ -56,6 +44,7 @@ public class Robot {
             System.out.println(this.toString());
         }
     }
+
 
     @Override
     public String toString() {

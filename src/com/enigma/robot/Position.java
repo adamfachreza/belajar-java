@@ -25,14 +25,24 @@ public class Position {
         this.coordinateY = coordinateY;
     }
 
-    public Position getRight(){
-        return new Position(this.coordinateX+1, this.coordinateY);
-    }    public Position getLeft(){
-        return new Position(this.coordinateX-1,this.coordinateY);
-    }    public Position getTop(){
-        return new Position(this.coordinateX,this.coordinateY+1);
-    }    public Position getBottom(){
-        return new Position(this.coordinateX,this.coordinateY-1);
+    public Position getNextPosition(EnumPosition enumPosition) {
+        return new Position(this.coordinateX + enumPosition.getX(), this.coordinateY + enumPosition.getY());
+    }
+
+    public Position getRight() {
+        return getNextPosition(EnumPosition.RIGHT);
+    }
+
+    public Position getLeft() {
+        return getNextPosition(EnumPosition.LEFT);
+    }
+
+    public Position getTop() {
+        return getNextPosition(EnumPosition.TOP);
+    }
+
+    public Position getBottom() {
+        return getNextPosition(EnumPosition.BOTTOM);
     }
 
     @Override
